@@ -1,5 +1,320 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  font-family: var(--main-font, IBM Plex mono, serif);
+  background-color: var(--bg-color, #000028);
+  color: var(--text-color, #f1b2ce);
+  font-size: var(--font-size);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding-block-start: 20px;
+  block-size: 100vh;
+  
+
+}
+
+.header__theme-menu {
+  justify-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  border: 1px solid transparent;
+  padding-inline-start: 13px;
+  padding-inline-end: 13px;
+  background-color: inherit;
+  outline: none;
+  color: var(--title__text-color);
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--decoration-color, #ff0070);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--decoration-color, #ff0070);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  border-block-end: 1px solid var(--decoration-color);
+}
+
+.header__title {
+  align-self: center;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--focus__text-color);
+  text-shadow: 4px 4px 0 var(--border-color);
+  line-height: 82.5%;
+  font-weight: bold;
+  padding-block-end: 20px;
+}
+
+.header__subtitle {
+  inline-size: 491px;
+  block-size: 71px;
+  background-color: var(--border-color);
+  line-height: 23.4px;
+  font-weight: bold;
+  color: var(--subtitle__text-color);
+  margin-inline-end: 20px;
+  align-self: center;
+  justify-self: end;
+  margin-block-end: 45px;
+}
+
+.rec {
+  display: flex;
+  position: absolute;
+  font-size: 18px;
+  line-height: 25%;
+  justify-self: end;
+  right: 30px;
+  top: 30px;
+}
+
+.rec::before {
+  content: "rec";
+  color: var(--title__text-color);
+  text-transform: uppercase;
+}
+
+.rec::after {
+  content: "";
+  margin-inline-start: 10px;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--decoration-color);
+  box-shadow: 0 0 6px var(--decoration-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  border-block-start: 1px solid var(--decoration-color);
+  border-inline-end: 1px solid var(--decoration-color);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: 20px;
+  inset-inline-start: 20px;
+  border-block-end: 1px solid var(--decoration-color);
+  border-inline-start: 1px solid var(--decoration-color);
+}
+
+/*! SECTIONS */
+
+.section {
+  margin-inline-start: 20px;
+  margin-inline-end: 20px;
+}
+
+.section:not(:first-of-type) {
+  margin-block-start: 80px;
+}
+
+.section:first-of-type {
+  margin-block-start: 60px;
+}
+
+.section__title {
+  color: var(--title__text-color);
+  line-height: 23.4px;
+  font-weight: normal;
+}
+
+.title-decor {
+  color: var(--subtitle__text-color);
+  background-color: var(--border-color);
+}
+
+.section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__concentration-hard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.section__concentration-less .section__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-block-start: 20px;
+}
+
+.section__concentration-how {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+/*! SECTIONS END */
+
+/*! IMGS */
+
+.img-list {
+  margin-block-start: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.picture {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sunset {
+  grid-column: span 2;
+}
+
+.ice-cream {
+  grid-row: span 2;
+}
+
+.cassette {
+  grid-row: span 2;
+}
+
+.street {
+  grid-column: span 2;
+}
+
+/*! IMGS end */
+
+.footer {
+  block-size: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 70px;
+}
+
+.footer__title{
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--focus__text-color);
+  text-shadow: 4px 4px 0 var(--border-color);
+  line-height: 82.5%;
+  font-weight: bold; 
+}
+
+@media ( width <= 768px) {
+  .header {
+    min-block-size: 1024px;
+  }
+
+  .header__theme-menu {
+    justify-self: flex-end;
+    align-self: center;
+    margin-inline-end: 20px;
+
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+
+  .header__subtitle {
+    inline-size: 364px;
+    block-size: 117px;
+  }
+
+  .section {
+    gap: 20px;
+  }
+
+  .section__concentration-less .section__list{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section__title {
+    max-inline-size: 236px;
+  }
+
+  .footer {
+    min-block-size: 1024px;
+  }
+}
+
+@media ( width <= 375px) {
+
+  .header {
+    width: 100vw;
+    min-block-size: 668px;
+    margin-block-start: 10px;
+  }
+
+  .decorated-zone::before {
+    inset-block-end: 20px;
+    inset-inline-start: 10px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-end: 10px;
+  }
+
+
+  .rec {
+    inset-inline-end: 18px;
+  }
+
+  .header__subtitle {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    inline-size: 355px;
+    block-size: 117px;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    padding-inline-start:10px;
+    padding-inline-end:10px;
+  }
+
+  .img-list{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+  }
+
+    .footer {
+      min-block-size: 668px;
+    }
+ 
+ 
+ 
+  }
+
