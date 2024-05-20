@@ -12,5 +12,6 @@
   --decoration-color: #ff0070;
   --subtitle__text-color: #000028;
   --text-color: #f1b2ce;
+  --hover-color: rgb(255, 0, 112, 0.4);
   --bg-image:url(../images/cover-image-dark.png);
 }

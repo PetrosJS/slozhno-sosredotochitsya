@@ -5,14 +5,14 @@
 */
 
 .page.theme_dark {
-  --main-font: "IBM Plex mono";
-  --font-size: 18px;
+ 
   --bg-color: #000028;
   --focus__text-color: #db00ff;
   --title__text-color: #ff0070;
   --border-color: #ff0070;
   --decoration-color: #ff0070;
   --subtitle__text-color: #000028;
+  --hover-color: rgb(255, 0, 112, 0.4);
   --text-color: #f1b2ce;
   --bg-image: url(../images/cover-image-dark.png);
   /* сохраните этот селектор в приведённом виде.
@@ -21,14 +21,14 @@
   */
 }
 :root.theme_dark {
-  --main-font: "IBM Plex mono";
-  --font-size: 18px;
+  
   --bg-color: #000028;
   --focus__text-color: #db00ff;
   --title__text-color: #ff0070;
   --border-color: #ff0070;
   --decoration-color: #ff0070;
   --subtitle__text-color: #000028;
+  --hover-color: rgb(255, 0, 112, 0.4);
   --text-color: #f1b2ce;
   --bg-image: url(../images/cover-image-dark.png);
 }
