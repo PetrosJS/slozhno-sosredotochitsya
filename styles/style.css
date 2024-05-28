@@ -308,11 +308,23 @@ p {
   .header {
     width: 100vw;
     min-block-size: 668px;
-    margin-block-start: 10px;
+    padding-block-start: 0px;
+  }
+
+  .header__theme-menu {
+    justify-self: flex-end;
+    align-self: center;
+    margin-inline-end: 10px;
+    margin-block-start: 40px;
+  }
+
+  .header__title {
+    padding-block-start: 20px;
+    padding-block-end: 0px;
   }
 
   .decorated-zone::before {
-    inset-block-end: 20px;
+    inset-block-end: 0px;
     inset-inline-start: 10px;
   }
 
@@ -329,6 +341,7 @@ p {
     margin-inline-end: 10px;
     inline-size: 355px;
     block-size: 117px;
+    margin-block-start: 40px;
   }
 
   .section {
@@ -362,7 +375,12 @@ p {
     margin-block-start: 0px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
+    object-fit: contain;
+  }
+
+  .img-sublist {
+    height: 100%;
     object-fit: contain;
   }
 
